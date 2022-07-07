@@ -8,18 +8,35 @@
 
 const isAllPass = (N, Arr) => 
 {
-   let people = 0;
-   for(i=0; i<N; i++)
-   {
-       if (Arr[i] >= 32) {
-           return 'YES';
-       } else {
-           break;
-       }
-   }
-   if(people===N){
-        return "YES"
-      }
-      return "NO"
+    let people=0;
+    Arr.forEach(function(element) {
+        if(element >= 32){
+        people+=1;
+        }
+        });
+        if(people === N){
+            return 'YES';
+        }
+        else{
+            return 'NO';
+        }
 };
-console.log(isAllPass( 7,[13, 89, 45, 98, 67, 45, 54] ));
+console.log(isAllPass( 7, [11, 45, 65, 76, 87, 98, 88] ));
+
+// const isAllPass = (N, Arr) => 
+// {
+//    let people = 0;
+//    for(i=0; i<N; i++)
+//    {
+//        if (Arr[i] >= 32) {
+//            return 'YES';
+//        } else {
+//            return 'NO';
+//        }
+//    }
+//    if(people===N){
+//         return "YES";
+//       }
+//       return "NO";
+// };
+// console.log(isAllPass( 7,[13, 89, 45, 98, 67, 45, 54] ));
